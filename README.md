@@ -191,14 +191,14 @@ The result image filenames above represent the recommended repository organizati
 
 ### S11
 
-![S11 Response](results/S11.png)
+![S11 Response](results/s11.png)
 
 The antenna exhibits a simulated resonance near 865 MHz with a minimum
 S11 of approximately -35 dB.
 
 ### VSWR
 
-![VSWR Response](results/VSWR.png)
+![VSWR Response](results/vswr.png)
 
 The simulated VSWR at the design frequency is approximately 1.04.
 
@@ -206,7 +206,7 @@ The simulated VSWR at the design frequency is approximately 1.04.
 
 **Single Element**
 
-![Single Element Far Field](results/Farfield_Element.png)
+![Single Element Far Field](results/Farfield_element.png)
 
 **1×4 Array**
 
