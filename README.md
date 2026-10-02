@@ -57,9 +57,37 @@ The primary simulation outputs include:
 | Array Configuration | 1×4 |
 
 ---
+
 ## Design Methodology
 
-**Patch Design → Feed Optimization → CST Simulation → Single-Element Analysis → 1×4 Array → Far-Field Analysis**
+The antenna design follows the following simulation workflow:
+
+Design Frequency
+        ↓
+Microstrip Patch Geometry
+        ↓
+Feed and Inset Configuration
+        ↓
+CST Electromagnetic Model
+        ↓
+Single Element Simulation
+        ↓
+    ┌───────────────┬───────────────┐
+    ↓               ↓               ↓
+   S11             VSWR        Far-Field Pattern
+    │               │               │
+    └───────────────┴───────────────┘
+                    ↓
+            1×4 Array Configuration
+                    ↓
+              λ/2 Element Spacing
+                    ↓
+              Array Simulation
+                    ↓
+          Array Far-Field Analysis
+
+---
+
 ## Antenna Configuration
 
 The project begins with a single microstrip patch antenna designed for operation at 865 MHz.
@@ -139,6 +167,50 @@ The result image filenames above represent the recommended repository organizati
 
 ---
 
+## Repository Structure
+
+865MHz-1x4-patch-antenna-array/
+│
+├── CST/
+│   └── Patch_Antenna.cst
+│
+│
+├── results/
+│   ├── S11.png
+│   ├── VSWR.png
+│   ├── farfield_element.png
+│   └── farfield_array.png
+│
+│
+├── README.md
+│
+└── .gitignore
+
+---
+## Simulation Results
+
+### S11
+
+![S11 Response](results/S11.png)
+
+The antenna exhibits a simulated resonance near 865 MHz with a minimum
+S11 of approximately -35 dB.
+
+### VSWR
+
+![VSWR Response](results/VSWR.png)
+
+The simulated VSWR at the design frequency is approximately 1.04.
+
+### Far-Field Radiation
+
+**Single Element**
+
+![Single Element Far Field](results/Farfield_Element.png)
+
+**1×4 Array**
+
+![1×4 Array Far Field](results/Farfield_Array.png)
 
 ## Engineering Analysis
 
